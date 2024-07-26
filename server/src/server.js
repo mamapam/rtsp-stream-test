@@ -13,7 +13,9 @@ const stream = new Stream({
   },
 });
 
-app.get('/', (req, res) => {
+app.use(express.static(`${__dirname}/public`));
+
+app.get('/', (_, res) => {
   res.sendFile(`${__dirname}/index.html`);
 });
 
